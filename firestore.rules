@@ -1,0 +1,102 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    function isAdmin() {
+      return signedIn()
+        && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == "admin";
+    }
+
+    function analyticsKeys() {
+      return ["label", "metadata", "sessionId", "path", "createdAt"];
+    }
+
+    function chatKeys() {
+      return ["action", "message", "response", "sessionId", "path", "createdAt"];
+    }
+
+    match /products/{productId} {
+      allow read: if true;
+      allow create, update: if isAdmin()
+        && request.resource.data.name is string
+        && request.resource.data.category is string
+        && request.resource.data.price is number
+        && request.resource.data.stock is number;
+      allow delete: if isAdmin();
+    }
+
+    match /siteContent/{pageId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /orders/{orderId} {
+      allow create: if signedIn()
+        && request.resource.data.userId == request.auth.uid
+        && request.resource.data.items is list
+        && request.resource.data.totalAmount is number;
+      allow read: if isAdmin() || (signedIn() && resource.data.userId == request.auth.uid);
+      allow update, delete: if isAdmin();
+    }
+
+    match /users/{uid} {
+      allow create: if isOwner(uid)
+        && request.resource.data.uid == uid
+        && request.resource.data.email == request.auth.token.email
+        && request.resource.data.role == "user";
+      allow read: if isOwner(uid) || isAdmin();
+      allow update: if isAdmin()
+        || (
+          isOwner(uid)
+          && request.resource.data.uid == resource.data.uid
+          && request.resource.data.email == resource.data.email
+          && request.resource.data.role == resource.data.role
+        );
+      allow delete: if isAdmin();
+    }
+
+    match /reviews/{reviewId} {
+      allow read: if true;
+      allow create: if signedIn() && request.resource.data.userId == request.auth.uid;
+      allow update, delete: if isAdmin() || (signedIn() && resource.data.userId == request.auth.uid);
+    }
+
+    match /clickEvents/{eventId} {
+      allow create: if request.resource.data.keys().hasOnly(analyticsKeys())
+        && request.resource.data.label is string
+        && request.resource.data.sessionId is string
+        && request.resource.data.path is string
+        && request.resource.data.createdAt == request.time;
+      allow read, update, delete: if isAdmin();
+    }
+
+    match /chatLogs/{logId} {
+      allow create: if request.resource.data.keys().hasOnly(chatKeys())
+        && request.resource.data.action is string
+        && request.resource.data.message is string
+        && request.resource.data.response is string
+        && request.resource.data.sessionId is string
+        && request.resource.data.path is string
+        && request.resource.data.createdAt == request.time;
+      allow read, update, delete: if isAdmin();
+    }
+
+    match /consultationRequests/{requestId} {
+      allow create: if request.resource.data.name is string
+        && request.resource.data.phone is string
+        && request.resource.data.outfit is string
+        && request.resource.data.status == "new"
+        && request.resource.data.createdAt == request.time;
+      allow read, update, delete: if isAdmin();
+    }
+  }
+}

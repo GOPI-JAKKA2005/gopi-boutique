@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-slate-200 dark:border-white/10;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-width: 320px;
+    background:
+      radial-gradient(circle at 12% 8%, rgba(244, 63, 94, 0.2), transparent 28rem),
+      radial-gradient(circle at 88% 16%, rgba(37, 99, 235, 0.18), transparent 30rem),
+      radial-gradient(circle at 75% 78%, rgba(16, 185, 129, 0.16), transparent 28rem),
+      radial-gradient(circle at 18% 88%, rgba(234, 179, 8, 0.18), transparent 24rem),
+      linear-gradient(135deg, #fff7ed 0%, #fdf2f8 28%, #eff6ff 58%, #ecfdf5 100%);
+    background-attachment: fixed;
+    color: #0f172a;
+  }
+
+  .dark body {
+    background:
+      radial-gradient(circle at 10% 10%, rgba(244, 63, 94, 0.18), transparent 28rem),
+      radial-gradient(circle at 90% 18%, rgba(37, 99, 235, 0.2), transparent 30rem),
+      radial-gradient(circle at 75% 78%, rgba(16, 185, 129, 0.14), transparent 28rem),
+      linear-gradient(135deg, #020617 0%, #111827 45%, #0f172a 100%);
+    color: #f8fafc;
+  }
+
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-950;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60;
+    background: linear-gradient(135deg, #e11d48, #f97316, #eab308, #10b981, #2563eb, #7c3aed);
+    background-size: 220% 220%;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-800 transition hover:-translate-y-0.5 hover:border-primary hover:text-primary dark:border-white/10 dark:bg-white/5 dark:text-white;
+  }
+
+  .input {
+    @apply w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 shadow-sm transition focus:border-primary dark:border-white/10 dark:bg-white/5 dark:text-white;
+  }
+
+  .label {
+    @apply mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-200;
+  }
+
+  .card {
+    @apply rounded-lg border border-white/70 bg-white/85 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/[0.06];
+  }
+
+  .rainbow-text {
+    background: linear-gradient(90deg, #e11d48, #f97316, #eab308, #10b981, #2563eb, #7c3aed);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .rainbow-panel {
+    @apply rounded-lg border border-white/70 shadow-soft backdrop-blur dark:border-white/10;
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.82)) padding-box,
+      linear-gradient(135deg, #e11d48, #f97316, #eab308, #10b981, #2563eb, #7c3aed) border-box;
+    border: 1px solid transparent;
+  }
+
+  .rainbow-band {
+    background:
+      linear-gradient(90deg, rgba(225, 29, 72, 0.13), rgba(249, 115, 22, 0.14), rgba(234, 179, 8, 0.13), rgba(16, 185, 129, 0.13), rgba(37, 99, 235, 0.13), rgba(124, 58, 237, 0.13)),
+      rgba(255, 255, 255, 0.55);
+  }
+
+  .rainbow-strip {
+    background: linear-gradient(90deg, #e11d48, #f97316, #eab308, #10b981, #2563eb, #7c3aed);
+  }
+
+  .rainbow-border-top {
+    position: relative;
+  }
+
+  .rainbow-border-top::before {
+    content: "";
+    @apply absolute inset-x-0 top-0 h-1 rounded-t-lg;
+    background: linear-gradient(90deg, #e11d48, #f97316, #eab308, #10b981, #2563eb, #7c3aed);
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold;
+  }
+
+  .skeleton {
+    @apply relative overflow-hidden rounded-lg bg-slate-200 dark:bg-white/10;
+  }
+
+  .skeleton::after {
+    content: "";
+    @apply absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/50 to-transparent dark:via-white/10;
+  }
+}
