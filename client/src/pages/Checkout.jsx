@@ -56,7 +56,7 @@ async function sendEmail({ toEmail, toName, items, total, orderId, orderDate, de
         payment_id: paymentId || "N/A",
         order_date: orderDate,
         delivery_date: deliveryDate,
-        shop_name: "Gopi Boutique",
+        shop_name: "Bell Boutique",
       },
       EMAILJS_PUBLIC_KEY
     );
@@ -137,7 +137,7 @@ export default function Checkout() {
       key: RAZORPAY_KEY_ID,
       amount: Math.round(totals.total * 100),
       currency: "INR",
-      name: "Gopi Boutique",
+      name: "Bell Boutique",
       description: `Order for ${form.name}`,
       image: "/favicon.ico",
       prefill: { name: form.name, contact: form.phone, email: currentUser.email },

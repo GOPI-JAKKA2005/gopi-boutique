@@ -6,7 +6,7 @@ import { logChatMessage, trackClick } from "../utils/analytics";
 import { useAuth } from "../context/AuthContext";
 
 const phone = import.meta.env.VITE_WHATSAPP_NUMBER || "916300912517";
-const whatsappUrl = `https://wa.me/${phone}?text=Hi%20Gopi%20Boutique%2C%20I%20want%20to%20book%20an%20appointment.`;
+const whatsappUrl = `https://wa.me/${phone}?text=Hi%20Bell%20Boutique%2C%20I%20want%20to%20book%20an%20appointment.`;
 
 const quickActions = [
   {

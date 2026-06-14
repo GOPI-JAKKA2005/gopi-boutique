@@ -1,4 +1,4 @@
-# Gopi Boutique App
+# Bell Boutique App
 
 React storefront and Firebase admin panel split into:
 

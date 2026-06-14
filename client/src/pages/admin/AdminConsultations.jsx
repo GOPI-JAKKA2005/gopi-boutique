@@ -177,7 +177,7 @@ export default function AdminConsultations() {
                 <div className="grid gap-2 text-sm">
                   <a href={`tel:${selected.phone}`} className="flex items-center gap-2 font-semibold text-primary hover:underline"><FiPhone />{selected.phone || "—"}</a>
                   <a href={`mailto:${selected.email}`} className="flex items-center gap-2 text-slate-600 hover:text-primary dark:text-slate-300"><FiMail />{selected.email || "—"}</a>
-                  <a href={`https://wa.me/91${selected.phone?.replace(/\D/g, "")}?text=Hi ${encodeURIComponent(selected.name)}, this is Gopi Boutique regarding your consultation request.`} target="_blank" rel="noreferrer" className="flex items-center gap-2 font-bold text-emerald-600 hover:underline">
+                  <a href={`https://wa.me/91${selected.phone?.replace(/\D/g, "")}?text=Hi ${encodeURIComponent(selected.name)}, this is Bell Boutique regarding your consultation request.`} target="_blank" rel="noreferrer" className="flex items-center gap-2 font-bold text-emerald-600 hover:underline">
                     <FiMessageCircle /> WhatsApp {selected.name?.split(" ")[0]}
                   </a>
                 </div>

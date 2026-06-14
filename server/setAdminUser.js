@@ -33,7 +33,7 @@ try {
   user = await adminAuth.createUser({
     email,
     password,
-    displayName: "Gopi Boutique Admin",
+    displayName: "Bell Boutique Admin",
     emailVerified: true,
   });
   console.log(`✔  Created Firebase Auth user: ${email}`);
@@ -50,7 +50,7 @@ await adminDb
   .set(
     {
       uid: user.uid,
-      name: user.displayName || "Gopi Boutique Admin",
+      name: user.displayName || "Bell Boutique Admin",
       email,
       role: "admin",          // <-- this is what AdminRoute checks
       photoURL: user.photoURL || "",

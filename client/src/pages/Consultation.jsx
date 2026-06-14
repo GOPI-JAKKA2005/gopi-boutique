@@ -6,7 +6,7 @@ import { formatCurrency } from "../utils/formatCurrency";
 import { useSiteContent } from "../hooks/useSiteContent";
 import { createConsultationRequest } from "../firebase/db";
 
-const whatsappUrl = "https://wa.me/916300912517?text=Hi%20Gopi%20Boutique%2C%20I%20want%20to%20book%20an%20appointment.";
+const whatsappUrl = "https://wa.me/916300912517?text=Hi%20Bell%20Boutique%2C%20I%20want%20to%20book%20an%20appointment.";
 
 const embroideryMultipliers = { Minimal: 1, Standard: 1.28, Premium: 1.62, Bridal: 2.05 };
 const baseBudgets = { Women: 22000, Men: 36000, Kids: 9500 };

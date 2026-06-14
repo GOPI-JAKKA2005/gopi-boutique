@@ -1,7 +1,7 @@
 import { FiFacebook, FiInstagram, FiMail, FiMapPin, FiMessageCircle, FiPhone } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
-const whatsappUrl = "https://wa.me/916300912517?text=Hi%20Gopi%20Boutique%2C%20I%20want%20to%20book%20an%20appointment.";
+const whatsappUrl = "https://wa.me/916300912517?text=Hi%20Bell%20Boutique%2C%20I%20want%20to%20book%20an%20appointment.";
 
 export default function Footer() {
   return (
@@ -9,15 +9,15 @@ export default function Footer() {
       <div className="rainbow-strip h-1" />
       <div className="container-page grid gap-10 py-12 md:grid-cols-[1.35fr_1fr_1fr_1.25fr]">
         <div>
-          <p className="text-xl font-black">Gopi<span className="rainbow-text">Boutique</span></p>
+          <p className="text-xl font-black">Bell<span className="rainbow-text">Boutique</span></p>
           <p className="mt-3 max-w-sm text-sm leading-6 text-slate-500 dark:text-slate-400">
             Andhra Pradesh-based designer boutique for bridal blouses, lehengas, gowns, hand embroidery, premium tailoring, and custom occasion wear.
           </p>
           <div className="mt-5 flex gap-3">
-            <a href="https://www.instagram.com/gopikohli982" target="_blank" rel="noreferrer" className="grid h-10 w-10 place-items-center rounded-lg border bg-white hover:border-primary hover:text-primary" aria-label="Instagram">
+            <a href="https://www.instagram.com/bellkohli982" target="_blank" rel="noreferrer" className="grid h-10 w-10 place-items-center rounded-lg border bg-white hover:border-primary hover:text-primary" aria-label="Instagram">
               <FiInstagram />
             </a>
-            <a href="https://www.facebook.com/GopiBoutique" target="_blank" rel="noreferrer" className="grid h-10 w-10 place-items-center rounded-lg border bg-white hover:border-primary hover:text-primary" aria-label="Facebook">
+            <a href="https://www.facebook.com/BellBoutique" target="_blank" rel="noreferrer" className="grid h-10 w-10 place-items-center rounded-lg border bg-white hover:border-primary hover:text-primary" aria-label="Facebook">
               <FiFacebook />
             </a>
           </div>

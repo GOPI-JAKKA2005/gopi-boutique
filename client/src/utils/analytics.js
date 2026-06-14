@@ -1,7 +1,7 @@
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase/config";
 
-const SESSION_KEY = "gopi-boutique-session";
+const SESSION_KEY = "bell-boutique-session";
 
 function sessionId() {
   if (typeof window === "undefined") return "server";

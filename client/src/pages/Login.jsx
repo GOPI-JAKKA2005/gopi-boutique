@@ -59,7 +59,7 @@ export default function Login() {
   return (
     <div className="container-page grid min-h-[75vh] place-items-center py-12">
       <form onSubmit={submit} className="rainbow-panel rainbow-border-top w-full max-w-md p-6">
-        <p className="text-sm font-bold uppercase rainbow-text">Gopi Boutique login</p>
+        <p className="text-sm font-bold uppercase rainbow-text">Bell Boutique login</p>
         <h1 className="mt-2 text-3xl font-black">{mode === "admin" ? "Admin access" : "Welcome back"}</h1>
         <p className="mt-2 text-sm text-slate-500">
           {mode === "admin" ? "Login with an admin account to manage products, orders, and users." : "Login as a customer to shop collections and book consultations."}

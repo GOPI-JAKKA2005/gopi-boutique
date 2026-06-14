@@ -53,7 +53,7 @@ export default function AdminLogin() {
         </div>
 
         <form onSubmit={submit} className="p-6 sm:p-8">
-          <p className="text-sm font-bold uppercase rainbow-text">Gopi Boutique control room</p>
+          <p className="text-sm font-bold uppercase rainbow-text">Bell Boutique control room</p>
           <h2 className="mt-2 text-3xl font-black">Sign in as administrator</h2>
           <div className="mt-6 space-y-4">
             <div>

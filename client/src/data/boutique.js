@@ -5,13 +5,13 @@ export const boutiqueCategories = [
   "Kids",
 ];
 
-export const boutiqueBrands = ["All", "Gopi Couture", "Bridal Edit", "Handwork Studio", "Celebration Wear"];
+export const boutiqueBrands = ["All", "Bell Couture", "Bridal Edit", "Handwork Studio", "Celebration Wear"];
 
 export const sampleProducts = [
   {
     id: "bridal-zardozi-blouse",
     name: "Royal Zardozi Bridal Blouse",
-    brand: "Gopi Couture",
+    brand: "Bell Couture",
     category: "Women",
     price: 28500,
     discountPrice: 24900,
@@ -53,7 +53,7 @@ export const sampleProducts = [
   {
     id: "ivory-bridal-gown",
     name: "Ivory Trail Bridal Gown",
-    brand: "Gopi Couture",
+    brand: "Bell Couture",
     category: "Women",
     price: 62000,
     discountPrice: 62000,
@@ -108,7 +108,7 @@ export const sampleProducts = [
   {
     id: "mens-sherwani-custom",
     name: "Custom Groom Sherwani",
-    brand: "Gopi Couture",
+    brand: "Bell Couture",
     category: "Men",
     price: 42000,
     discountPrice: 39500,

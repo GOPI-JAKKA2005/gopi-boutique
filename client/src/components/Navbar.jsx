@@ -44,7 +44,7 @@ export default function Navbar() {
         <div className="rainbow-strip h-1" />
         <nav className="container-page flex h-16 items-center justify-between gap-4">
           <Link to="/" className="text-xl font-black tracking-tight">
-            Gopi<span className="rainbow-text">Boutique</span>
+            Bell<span className="rainbow-text">Boutique</span>
           </Link>
           <div className="hidden items-center gap-1 md:flex">
             {links.map((link) => (
